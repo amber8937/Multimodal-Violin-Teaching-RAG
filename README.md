@@ -1,4 +1,4 @@
-# 🎻 Multimodal RAG System
+# 🎻 Multimodal Violin Teaching RAG
 
 A violin teaching Retrieval-Augmented Generation system with multimodal support 
 for technical documentation.
