@@ -1,7 +1,11 @@
 # 🎻 Multimodal RAG System
 
-A production-ready Retrieval-Augmented Generation system with multimodal support 
+A violin teaching Retrieval-Augmented Generation system with multimodal support 
 for technical documentation.
+
+
+https://github.com/user-attachments/assets/f8bfeb73-3f18-4973-9451-e63729fb3f1e
+
 
 ## ✨ Features
 
@@ -13,7 +17,6 @@ for technical documentation.
 
 ## 🏗️ Architecture
 
-[Include a diagram - Mermaid or image]
 ```
 PDF → Text Extraction + Image Extraction
          ↓                    ↓
