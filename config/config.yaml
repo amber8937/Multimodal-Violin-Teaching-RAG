@@ -1,0 +1,114 @@
+# Multimodal RAG Configuration
+
+# Model Provider Selection
+# Options: 'mistral', 'ollama'
+provider: 'mistral'
+
+# Mistral Models (https://docs.mistral.ai/getting-started/models/)
+mistral:
+  embedding_model: 'mistral-embed'  # Text embedding model
+  generation_model: 'pixtral-large-latest'  # Generation model
+  api_key_env: 'MISTRAL_API_KEY'  # Environment variable name
+
+# Ollama Models (https://ollama.ai/library)
+# Install Ollama and pull models: ollama pull <model-name>
+ollama:
+  embedding_model: 'nomic-embed-text'  # Text embedding model
+  generation_model: 'mistral'  # Generation model
+  base_url_env: 'OLLAMA_BASE_URL'  # Environment variable name
+
+# Document Processing
+document_processing:
+  # Minimum image dimensions (px) to keep
+  min_image_width: 100
+  min_image_height: 100
+  # Maximum images per page to process
+  max_images_per_page: 10
+  # Image format for extraction
+  image_format: 'png'
+  # DPI for image extraction
+  image_dpi: 150
+
+# Semantic Chunking
+chunking:
+  # Sentence similarity threshold for chunk boundaries
+  breakpoint_threshold: 0.6
+  # Maximum chunk size in tokens
+  max_chunk_size: 512
+  # Minimum chunk size in tokens
+  min_chunk_size: 180
+  # Overlap between chunks (tokens)
+  chunk_overlap: 30
+
+# Vector Database
+vector_db:
+  # Path to ChromaDB persistent storage
+  persist_directory: './chroma_db'
+  # Collection names
+  text_collection: 'text_chunks'
+  image_collection: 'image_descriptions'
+  # Distance metric: 'cosine', 'l2', 'ip' (inner product)
+  distance_metric: 'cosine'
+
+# Retrieval
+retrieval:
+  # Hybrid Search Parameters
+  # Weight for semantic search (1 - alpha = BM25 weight)
+  semantic_weight: 0.7  # 70% semantic, 30% BM25
+
+  # Number of candidates to retrieve before reranking
+  top_k_candidates: 40
+
+  # Final number of results after reranking
+  top_k_final: 10
+
+  # Text-grounded image retrieval
+  # Number of image results to include
+  top_k_images: 3
+
+  # Whether to include images in final context
+  include_images: true
+
+# Generation
+generation:
+  # Temperature for response generation
+  temperature: 0.2
+
+  # Maximum tokens in generated response
+  max_tokens: 1024
+
+  # Whether to use streaming responses
+  stream: false
+
+  # System prompt template
+  system_prompt: |
+    You are an expert assistant for aviation technical documentation.
+    Answer questions accurately based on the provided context.
+    If the context doesn't contain enough information, say so clearly.
+
+  # User prompt template (use {context} and {query} placeholders)
+  user_prompt_template: |
+    Context information:
+    {context}
+
+    Question: {query}
+
+    Answer:
+
+# Evaluation
+evaluation:
+  # Metrics to compute
+  metrics:
+    - 'answer_relevancy'
+    - 'faithfulness'
+    - 'context_precision'
+    - 'context_recall'
+
+  # Batch size for evaluation
+  batch_size: 10
+
+# Logging
+logging:
+  level: 'INFO'  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+  file: null  # Set to path for file logging, null for console only

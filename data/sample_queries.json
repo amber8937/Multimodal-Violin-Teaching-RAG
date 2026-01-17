@@ -1,0 +1,44 @@
+{
+  "queries": [
+    {
+      "id": 1,
+      "query": "What is the correct thumb position for shifting?"
+    },
+    {
+      "id": 2,
+      "query": "How should I hold the bow for spiccato?"
+    },
+    {
+      "id": 3,
+      "query": "What exercises help with vibrato development?"
+    },
+    {
+      "id": 4,
+      "query": "What is the proper arm position for détaché bowing?"
+    },
+    {
+      "id": 5,
+      "query": "How do I practice shifting to higher positions?"
+    },
+    {
+      "id": 6,
+      "query": "What is the difference between wrist and arm vibrato?"
+    },
+    {
+      "id": 7,
+      "query": "How should I distribute bow weight for different dynamics?"
+    },
+    {
+      "id": 8,
+      "query": "What are the key points for playing in tune?"
+    },
+    {
+      "id": 9,
+      "query": "How do I develop a relaxed left hand position?"
+    },
+    {
+      "id": 10,
+      "query": "What is the correct way to practice double stops?"
+    }
+  ]
+}
