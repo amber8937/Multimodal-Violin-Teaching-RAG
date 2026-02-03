@@ -66,9 +66,9 @@ cd UI && npm install && npm run dev
 
 | Metric | Score |
 |--------|-------|
-| Faithfulness | 0.XX |
-| Answer Relevancy | 0.XX |
-| Context Relevancy | 0.XX |
+| Faithfulness | 0-1 |
+| Answer Relevancy | 0-1 |
+| Context Relevancy | 0-1 |
 
 ## 🛠️ Tech Stack
 
